@@ -1,5 +1,5 @@
 .background-image({?options.safeMode}~"{/options.safeMode}
-  {#gradient}{type}-gradient({angle|gradientAngle}
+  {#gradient}{type}-gradient({angle|css3GradientAngle}
     {#stops}
         , {@color type=options.colorType}{color}{/color} {location}%
     {/stops}
