@@ -37,9 +37,9 @@
 
 {#bounds}
      {@if cond="{width} == {height}"}
-       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width}{?options.saveMode}"{/options.saveMode});{~n}
+       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width|px}{?options.saveMode}"{/options.saveMode});{~n}
      {:else}
-       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width}, {height}{?options.saveMode}"{/options.saveMode});{~n}
+       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width|px}, {height|px}{?options.saveMode}"{/options.saveMode});{~n}
      {/if}
 {/bounds}
 
