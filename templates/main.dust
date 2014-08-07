@@ -4,7 +4,7 @@
       {/if}
 {/options.selector}
 
-{?opacity}{?options.selector}    {/options.selector}.opacity({?options.saveMode}~"{/options.saveMode}{opacity}{?options.saveMode}"{/options.saveMode});{~n}{/opacity}
+{?opacity}{?options.selector}    {/options.selector}.opacity({?options.safeMode}~"{/options.safeMode}{opacity}{?options.safeMode}"{/options.safeMode});{~n}{/opacity}
 
 {?options.inheritFontStyles}
   {#baseTextStyle}
@@ -37,9 +37,9 @@
 
 {#bounds}
      {@if cond="{width} == {height}"}
-       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width|px}{?options.saveMode}"{/options.saveMode});{~n}
+       {?options.selector}    {/options.selector}.size({?options.safeMode}~"{/options.safeMode}{width|px}{?options.safeMode}"{/options.safeMode});{~n}
      {:else}
-       {?options.selector}    {/options.selector}.size({?options.saveMode}~"{/options.saveMode}{width|px}, {height|px}{?options.saveMode}"{/options.saveMode});{~n}
+       {?options.selector}    {/options.selector}.size({?options.safeMode}~"{/options.safeMode}{width|px}, {height|px}{?options.safeMode}"{/options.safeMode});{~n}
      {/if}
 {/bounds}
 
@@ -59,7 +59,7 @@
 {/border}
 
 {#radius}
-    {?options.selector}    {/options.selector}.border-radius({?options.saveMode}~"{/options.saveMode}{radius|radius}{?options.saveMode}"{/options.saveMode});{~n}
+    {?options.selector}    {/options.selector}.border-radius({?options.safeMode}~"{/options.safeMode}{radius|radius}{?options.safeMode}"{/options.safeMode});{~n}
 {/radius}
 
 {?textStyles}
