@@ -1,15 +1,15 @@
 {
-  "name": "csshat-language-lesshat",
+  "name": "csshat-language-less-lesshat",
   "title": "Less (Less Hat)",
   "version": "1.0.0",
   "description": "Less language",
   "main": "dust.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/csshat/language-less"
+    "url": "https://github.com/csshat/language-less-lesshat"
   },
   "bugs": {
-    "url": "https://github.com/csshat/language-less/issues"
+    "url": "https://github.com/csshat/language-less-lesshat/issues"
   },
   "author": "Tomas Hanacek <tomashanacek@abdoc.net> (https://github.com/tomashanacek)",
   "contributors": [
