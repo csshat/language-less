@@ -11,9 +11,10 @@
   "bugs": {
     "url": "https://github.com/csshat/language-less-lesshat/issues"
   },
-  "author": "Tomas Hanacek <tomashanacek@abdoc.net> (https://github.com/tomashanacek)",
+  "author": "Petr Brzek <petrbrzek@abdoc.net> (https://github.com/petrbrzek)",
   "contributors": [
-    "Marek Hrabe <marekhrabe@abdoc.net> (https://github.com/marekhrabe)"
+    "Marek Hrabe <marekhrabe@abdoc.net> (https://github.com/marekhrabe)",
+    "Tomas Hanacek <tomashanacek@abdoc.net> (https://github.com/tomashanacek)"
   ],
   "license": "MIT",
   "dependencies": {
