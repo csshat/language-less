@@ -1,7 +1,7 @@
 var css = require('octopus-helpers').css;
 var utils = require('octopus-helpers').utils;
 
-// Options: selector, selectorTextStyle, selectorType, vendorPrefixes, colorType, inheritFontStyles
+// Options: selector, selectorTextStyle, selectorType, colorType, inheritFontStyles, saveMode
 
 var filters = {
     px: css.px,
