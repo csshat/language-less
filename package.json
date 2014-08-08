@@ -1,7 +1,7 @@
 {
   "name": "csshat-language-less-lesshat",
   "title": "Less (Less Hat)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Less language",
   "main": "dust.js",
   "repository": {
@@ -27,7 +27,7 @@
     },
     "selector": {
       "type": "boolean",
-      "default": true
+      "default": false
     },
     "selectorTextStyle": {
       "type": "boolean",
@@ -59,6 +59,10 @@
     "safeMode": {
       "type": "boolean",
       "default": false
+    },
+    "showTextSnippet": {
+      "type": "boolean",
+      "default": true
     }
   },
   "bundledDependencies": [
