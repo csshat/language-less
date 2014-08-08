@@ -78,7 +78,7 @@ var helpers = {
 
       data = 'Style for "' + data.slice(0, 14) + '"';
 
-      return chunk.write('/* ' + data + ' */');
+      return chunk.write('// ' + data);
     }
 };
 

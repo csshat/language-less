@@ -2,8 +2,8 @@
     {@if cond="'{textStyles}'.length && '{textStyles.length}' < 2"}
       {@textSnippet ranges=""}{name}{/textSnippet}{~n}
     {:else}
-      {?textStyles}{?options.inheritFontStyles}{`/* Base style */`}{~n}{/options.inheritFontStyles}{/textStyles}
-      {^textStyles}{`/* Style for`} {name} {`*/`}{~n}{/textStyles}
+      {?textStyles}{?options.inheritFontStyles}{`// Base style `}{~n}{/options.inheritFontStyles}{/textStyles}
+      {^textStyles}{`// Style for`} {name}{~n}{/textStyles}
     {/if}
 {/options.showTextSnippet}
 {?options.selector}
