@@ -1,6 +1,6 @@
 # Less (Less Hat)
 
-[![Install in CSS Hat](http://img.shields.io/badge/install-to%20CSS%20Hat-blue.svg)](https://csshat.com/addons.html?install=csshat/language-less-lesshat)
+[![Install in CSS Hat](http://img.shields.io/badge/install-to%20CSS%20Hat-blue.svg)](http://addons.csshat.com/?install=csshat/language-less-lesshat)
 
 This is a template for [CSS Hat 2](https://csshat.com/) that generates code in [Less language](http://lesscss.org/) (using [LESS Hat Library](http://lesshat.com/)).
 
