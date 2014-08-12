@@ -15,7 +15,6 @@ font-family: "Helvetica";
 font-size: 12px;
 
 font-weight: bold;
-
 ```
 
 ### Selector
@@ -28,9 +27,10 @@ It will add curly braces and selector to the output
 }
 ```
 
-### SelectorTextStyle
+<!--### SelectorTextStyle
 
 You can choose text style
+-->
 
 ### Selector Type
 
