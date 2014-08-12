@@ -31,7 +31,7 @@
       "default": false
     },
     "selectorTextStyle": {
-      "type": "boolean",
+      "type": "hidden",
       "options": [
         "Dash case",
         "Snake case",
