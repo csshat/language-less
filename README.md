@@ -40,7 +40,7 @@ We try to autogenerate a selector from layer name. You can choose which type it 
 | ------ | ------- |
 | class | `.button` |
 | id | `#button` |
-| element | button`` |
+| element | `button` |
 
 ### Color Type
 
