@@ -4,6 +4,11 @@
   "version": "1.1.0",
   "description": "Less language",
   "main": "dust.js",
+  "scope": "source.css.less",
+  "engines": {
+    "csshat": "~2.0.0",
+    "avocode": "*"
+  },
   "homepage": "https://github.com/csshat/language-less-lesshat",
   "repository": {
     "type": "git",
