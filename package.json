@@ -1,7 +1,7 @@
 {
   "name": "csshat-language-less-lesshat",
   "title": "Less (Less Hat)",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Less language",
   "main": "dust.js",
   "scope": "source.css.less",
