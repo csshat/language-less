@@ -1,9 +1,9 @@
 {
   "name": "csshat-language-less-lesshat",
   "title": "Less (Less Hat)",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Less language",
-  "main": "dust.js",
+  "main": "main",
   "scope": "source.css.less",
   "engines": {
     "csshat": "~2.0.0",
@@ -24,9 +24,13 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "octopus-helpers": "^0.2.9"
+    "octopus-helpers": "^1.0.0"
   },
   "settings": {
+    "vendorPrefixes": {
+      "type": "boolean",
+      "default": true
+    },
     "inheritFontStyles": {
       "type": "boolean",
       "default": true
@@ -35,14 +39,30 @@
       "type": "boolean",
       "default": false
     },
-    "selectorTextStyle": {
-      "type": "hidden",
+    "addExplainingCommentsToCode": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAbsolutePositions": {
+      "type": "boolean",
+      "default": false
+    },
+    "quoteType": {
+      "type": "select",
       "options": [
-        "Dash case",
-        "Snake case",
-        "Camel case"
+        "'",
+        "\""
       ],
-      "default": "Dash case"
+      "default": "\""
+    },
+    "selectorTextStyle": {
+      "type": "select",
+      "options": [
+        "dash-case",
+        "snake_case",
+        "camelCase"
+      ],
+      "default": "dash-case"
     },
     "selectorType": {
       "type": "select",
@@ -62,13 +82,22 @@
       ],
       "default": "hex"
     },
-    "safeMode": {
-      "type": "boolean",
-      "default": false
+    "unit": {
+      "type": "hidden",
+      "options": [
+        "px",
+        "em",
+        "rem"
+      ],
+      "default": "px"
     },
-    "showTextSnippet": {
+    "useColorName": {
       "type": "boolean",
       "default": true
+    },
+    "useInterpolationSyntax": {
+      "type": "boolean",
+      "default": false
     }
   },
   "bundledDependencies": [
