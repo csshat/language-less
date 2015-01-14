@@ -27,19 +27,11 @@
     "octopus-helpers": "^1.0.0"
   },
   "settings": {
-    "vendorPrefixes": {
-      "type": "boolean",
-      "default": true
-    },
     "inheritFontStyles": {
       "type": "boolean",
       "default": true
     },
-    "selector": {
-      "type": "boolean",
-      "default": false
-    },
-    "addExplainingCommentsToCode": {
+    "showComments": {
       "type": "boolean",
       "default": true
     },
@@ -47,22 +39,13 @@
       "type": "boolean",
       "default": false
     },
-    "quoteType": {
-      "type": "select",
-      "options": [
-        "'",
-        "\""
-      ],
-      "default": "\""
+    "useColorName": {
+      "type": "boolean",
+      "default": true
     },
-    "selectorTextStyle": {
-      "type": "select",
-      "options": [
-        "dash-case",
-        "snake_case",
-        "camelCase"
-      ],
-      "default": "dash-case"
+    "selector": {
+      "type": "boolean",
+      "default": false
     },
     "selectorType": {
       "type": "select",
@@ -73,6 +56,15 @@
       ],
       "default": "class"
     },
+    "selectorTextStyle": {
+      "type": "select",
+      "options": [
+        "dash-case",
+        "snake_case",
+        "camelCase"
+      ],
+      "default": "dash-case"
+    },
     "colorType": {
       "type": "select",
       "options": [
@@ -82,6 +74,18 @@
       ],
       "default": "hex"
     },
+    "quoteType": {
+      "type": "select",
+      "options": [
+        "'",
+        "\""
+      ],
+      "default": "\""
+    },
+    "useInterpolationSyntax": {
+      "type": "boolean",
+      "default": false
+    },
     "unit": {
       "type": "hidden",
       "options": [
@@ -90,14 +94,6 @@
         "rem"
       ],
       "default": "px"
-    },
-    "useColorName": {
-      "type": "boolean",
-      "default": true
-    },
-    "useInterpolationSyntax": {
-      "type": "boolean",
-      "default": false
     }
   },
   "bundledDependencies": [

@@ -7,7 +7,7 @@
 # Private fns
 
 _declaration = ($$, lessMixinSyntax, interpolatedSyntax, property, value, modifier) ->
-  return unless value?
+  return if not value? or value == ''
 
   value = modifier(value) if modifier
 
@@ -26,9 +26,9 @@ renderColor = (color, colorVariable) ->
     colorVariable
 
 
-_comment = ($, addExplainingCommentsToCSS, text) ->
-  return unless addExplainingCommentsToCSS
-  $ "// #{text} */"
+_comment = ($, showComments, text) ->
+  return unless showComments
+  $ "// #{text}"
 
 
 defineVariable = (name, value, options) ->
