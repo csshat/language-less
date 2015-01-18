@@ -5,6 +5,7 @@
   "description": "Less language",
   "main": "main",
   "scope": "source.css.less",
+  "codeLanguage": true,
   "engines": {
     "csshat": "~2.0.0",
     "avocode": "*"
