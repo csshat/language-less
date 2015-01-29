@@ -23,7 +23,7 @@ renderColor = (color, colorVariable) ->
   if color.a < 1
     "fade(#{colorVariable}, #{100 - color.a * 10})"
   else
-    colorVariable
+    renderVariable(colorVariable)
 
 
 _comment = ($, showComments, text) ->
@@ -35,7 +35,7 @@ defineVariable = (name, value, options) ->
   "@#{name}: #{value};"
 
 
-renderVariable = (name) -> name
+renderVariable = (name) -> "@#{name}"
 
 
 _convertColor = _.partial(css.convertColor, renderColor)
