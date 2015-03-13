@@ -21,7 +21,7 @@ _declaration = ($$, lessMixinSyntax, interpolatedSyntax, property, value, modifi
 
 renderColor = (color, colorVariable) ->
   if color.a < 1
-    "fade(#{colorVariable}, #{100 - color.a * 10})"
+    "fade(#{colorVariable}, #{100 - color.a * 100})"
   else
     renderVariable(colorVariable)
 
