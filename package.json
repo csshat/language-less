@@ -29,22 +29,32 @@
   },
   "settings": {
     "inheritFontStyles": {
+      "description": "Group common styles for selected layers.",
       "type": "boolean",
       "default": true
     },
     "showComments": {
+      "description": "Show a brief description of selected layers.",
       "type": "boolean",
       "default": true
     },
     "showAbsolutePositions": {
+      "description": "Show absolute X and Y coordinates for all layers.",
       "type": "boolean",
       "default": false
     },
     "useColorName": {
+      "description": "Show color name values of common colors rather than hex codes.",
       "type": "boolean",
       "default": true
     },
+    "useInterpolationSyntax": {
+      "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler.",
+      "type": "boolean",
+      "default": false
+    },
     "selector": {
+      "description": "Wrap code in a css selector.",
       "type": "boolean",
       "default": false
     },
@@ -82,10 +92,6 @@
         "\""
       ],
       "default": "\""
-    },
-    "useInterpolationSyntax": {
-      "type": "boolean",
-      "default": false
     },
     "unit": {
       "type": "hidden",
