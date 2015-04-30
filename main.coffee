@@ -56,7 +56,7 @@ class Less
   render: ($) ->
     $$ = $.indents
     declaration = _.partial(_declaration, $$, false, false)
-    mixin = _.partial(_declaration, $$, true, @options.useInterpolationSyntax)
+    mixin = _.partial(_declaration, $$, @options.enableLessHat, @options.useInterpolationSyntax)
     comment = _.partial(_comment, $, @options)
     unit = _.partial(css.unit, @options.unit)
     convertColor = _.partial(_convertColor, @options)
@@ -91,10 +91,14 @@ class Less
             declaration('top', @bounds.top, unit)
 
           if @bounds
-            if @bounds.width == @bounds.height
-              mixin('size', @bounds.width, unit)
+            if @options.enableLessHat
+              if @bounds.width == @bounds.height
+                mixin('size', @bounds.width, unit)
+              else
+                mixin('size', "#{unit(@bounds.width)}, #{unit(@bounds.height)}")
             else
-              mixin('size', "#{unit(@bounds.width)}, #{unit(@bounds.height)}")
+              declaration('width', @bounds.width, unit)
+              declaration('height', @bounds.height, unit)
 
           mixin('opacity', @opacity)
 
@@ -117,10 +121,14 @@ class Less
         declaration('top', @bounds.top, unit)
 
       if @bounds
-        if @bounds.width == @bounds.height
-          mixin('size', @bounds.width, unit)
+        if @options.enableLessHat
+          if @bounds.width == @bounds.height
+            mixin('size', @bounds.width, unit)
+          else
+            mixin('size', "#{unit(@bounds.width)}, #{unit(@bounds.height)}")
         else
-          mixin('size', "#{unit(@bounds.width)}, #{unit(@bounds.height)}")
+          declaration('width', @bounds.width, unit)
+          declaration('height', @bounds.height, unit)
 
       mixin('opacity', @opacity)
 

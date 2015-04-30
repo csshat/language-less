@@ -48,8 +48,13 @@
       "type": "boolean",
       "default": true
     },
+    "enableLessHat": {
+      "description": "Use Less Hat mixin library. [Read more](http://lesshat.madebysource.com/)",
+      "type": "boolean",
+      "default": true
+    },
     "useInterpolationSyntax": {
-      "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler.",
+      "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler. Only aplicable when Less Hat is toggled on",
       "type": "boolean",
       "default": false
     },
