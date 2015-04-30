@@ -73,7 +73,8 @@ class Less
     if @type == 'textLayer'
       for textStyle in css.prepareTextStyles(@options.inheritFontStyles, @baseTextStyle, @textStyles)
 
-        comment(css.textSnippet(@text, textStyle))
+        if @options.showComments
+          comment(css.textSnippet(@text, textStyle))
 
         if @options.selector
           if textStyle.ranges
@@ -105,7 +106,9 @@ class Less
         endSelector()
         $.newline()
     else
-      comment("Style for \"#{utils.trim(@name)}\"")
+      if @options.showComments
+        comment("Style for \"#{utils.trim(@name)}\"")
+
       startSelector(@name)
 
       if @options.showAbsolutePositions
