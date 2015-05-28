@@ -25,7 +25,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "octopus-helpers": "^1.0.0"
+    "octopus-helpers": "^1.5.0"
   },
   "settings": {
     "inheritFontStyles": {
@@ -47,6 +47,31 @@
       "description": "Show color name values of common colors rather than hex codes.",
       "type": "boolean",
       "default": true
+    },
+    "unit": {
+      "type": "select",
+      "options": [
+        "px",
+        "em",
+        "rem"
+      ],
+      "default": "px"
+    },
+    "emValue": {
+      "description": "1 em = x px — Ammount of pixels that correspond to one em. Em value is **not** relative to parent element.",
+      "type": "text",
+      "default": 16,
+      "validate": "setNumberValue",
+      "showFor": "unit",
+      "showWhen": "em"
+    },
+    "remValue": {
+      "description": "1 rem = x px — Ammount of pixels that correspond to one rem",
+      "type": "text",
+      "default": 16,
+      "validate": "setNumberValue",
+      "showFor": "unit",
+      "showWhen": "rem"
     },
     "enableLessHat": {
       "description": "Use Less Hat mixin library. [Read more](http://lesshat.madebysource.com/)",
@@ -97,15 +122,6 @@
         "\""
       ],
       "default": "\""
-    },
-    "unit": {
-      "type": "hidden",
-      "options": [
-        "px",
-        "em",
-        "rem"
-      ],
-      "default": "px"
     }
   },
   "bundledDependencies": [

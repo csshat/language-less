@@ -51,6 +51,14 @@ _endSelector = ($, selector) ->
   $ '}'
 
 
+setNumberValue = (number) ->
+  converted = parseInt(number, 10)
+  if not number.match(/^\d+(\.\d+)?$/)
+    return 'Please enter numeric value'
+  else
+    return converted
+
+
 class Less
 
   render: ($) ->
@@ -58,7 +66,13 @@ class Less
     declaration = _.partial(_declaration, $$, false, false)
     mixin = _.partial(_declaration, $$, @options.enableLessHat, @options.useInterpolationSyntax)
     comment = _.partial(_comment, $, @options)
-    unit = _.partial(css.unit, @options.unit)
+
+    rootValue = switch @options.unit
+      when 'px' then 0
+      when 'em' then @options.emValue
+      when 'rem' then @options.remValue
+    unit = _.partial(css.unit, @options.unit, rootValue)
+
     convertColor = _.partial(_convertColor, @options)
     fontStyles = _.partial(css.fontStyles, declaration, convertColor, unit, @options.quoteType)
 
@@ -150,4 +164,4 @@ class Less
       endSelector()
 
 
-module.exports = {defineVariable, renderVariable, renderClass: Less}
+module.exports = {defineVariable, renderVariable, setNumberValue, renderClass: Less}
