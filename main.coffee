@@ -156,7 +156,7 @@ class Less
         border = @borders[0]
         declaration('border', "#{unit(border.width)} #{border.style} #{convertColor(border.color)}")
 
-      mixin('border-radius', @radius, css.radius)
+      mixin('border-radius', @radius, _.partial(css.radius, unit))
 
       if @shadows
         mixin('box-shadow', css.convertShadows(convertColor, unit, @shadows))
