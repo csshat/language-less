@@ -99,7 +99,11 @@
     "useInterpolationSyntax": {
       "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler. Only aplicable when Less Hat is toggled on",
       "type": "boolean",
-      "default": false
+      "default": false,
+      "showFor": [
+        "enableLessHat"
+      ],
+      "showWhen": true
     },
     "selector": {
       "description": "Wrap code in a css selector.",

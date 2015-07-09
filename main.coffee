@@ -11,7 +11,7 @@ _declaration = ($$, lessMixinSyntax, interpolatedSyntax, property, value, modifi
 
   value = modifier(value) if modifier
 
-  value = "~\"#{value}\"" if interpolatedSyntax
+  value = "~\"#{value}\"" if interpolatedSyntax and lessMixinSyntax
 
   if lessMixinSyntax
     $$ ".#{property}(#{value});"
