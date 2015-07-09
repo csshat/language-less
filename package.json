@@ -97,7 +97,7 @@
       "default": true
     },
     "useInterpolationSyntax": {
-      "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler. Only aplicable when Less Hat is toggled on",
+      "description": "Escapes all mixin values. Enable this option if you have problems with your LESS compiler. Only applicable when Less Hat is toggled on",
       "type": "boolean",
       "default": false,
       "showFor": [
