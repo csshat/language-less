@@ -174,5 +174,6 @@ class Less
 
       endSelector()
 
+metadata = require './package.json'
 
-module.exports = {defineVariable, renderVariable, setNumberValue, renderClass: Less}
+module.exports = {defineVariable, renderVariable, setNumberValue, renderClass: Less, metadata}
