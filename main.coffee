@@ -59,6 +59,27 @@ setNumberValue = (number) ->
     return converted
 
 
+declareAbsolutePosition = (declaration, bounds, unit) ->
+  declaration('position', 'absolute')
+  declaration('left', bounds.left, unit)
+  declaration('top', bounds.top, unit)
+
+
+declareDimensions = (declaration, bounds, unit) ->
+  declaration('width', unit(bounds.width))
+  declaration('height', unit(bounds.height))
+
+
+declareSizeMixinOrDimensions = (enableLessHat, mixin, declaration, bounds, unit) ->
+    if enableLessHat
+      if bounds.width == bounds.height
+        mixin('size', bounds.width, unit)
+      else
+        mixin('size', "#{unit(bounds.width)}, #{unit(bounds.height)}")
+    else
+      declareDimensions(declaration, bounds, unit)
+
+
 class Less
 
   render: ($) ->
@@ -93,44 +114,47 @@ class Less
     endSelector = _.partial(_endSelector, $, @options.selector)
 
     if @type == 'textLayer'
-      for textStyle in css.prepareTextStyles(@options.inheritFontStyles, @baseTextStyle, @textStyles)
+      if @baseTextStyle and @textStyles
+        for textStyle in css.prepareTextStyles(@options.inheritFontStyles, @baseTextStyle, @textStyles)
 
-        if @options.showComments
-          comment(css.textSnippet(@text, textStyle))
+          if @options.showComments
+            comment(css.textSnippet(@text, textStyle))
 
-        if @options.selector
-          if textStyle.ranges
-            selectorText = utils.textFromRange(@text, textStyle.ranges[0])
-          else
-            selectorText = @name
-
-          startSelector(selectorText)
-
-        if not @options.inheritFontStyles or textStyle.base
-          if @options.showAbsolutePositions
-            declaration('position', 'absolute')
-            declaration('left', @bounds.left, unit)
-            declaration('top', @bounds.top, unit)
-
-          if @bounds
-            if @options.enableLessHat
-              if @bounds.width == @bounds.height
-                mixin('size', @bounds.width, unit)
-              else
-                mixin('size', "#{unit(@bounds.width)}, #{unit(@bounds.height)}")
+          if @options.selector
+            if textStyle.ranges
+              selectorText = utils.textFromRange(@text, textStyle.ranges[0])
             else
-              declaration('width', @bounds.width, unit)
-              declaration('height', @bounds.height, unit)
+              selectorText = @name
 
-          mixin('opacity', @opacity)
+            startSelector(selectorText)
 
-          if @shadows
-            declaration('text-shadow', css.convertTextShadows(convertColor, unit, @shadows))
+          if not @options.inheritFontStyles or textStyle.base
+            if @options.showAbsolutePositions
+              declareAbsolutePosition(declaration, @bounds, unit)
 
-        fontStyles(textStyle)
+            if @bounds
+              declareSizeMixinOrDimensions(@options.enableLessHat, mixin, declaration, @bounds, unit)
+
+            mixin('opacity', @opacity)
+
+            if @shadows
+              declaration('text-shadow', css.convertTextShadows(convertColor, unit, @shadows))
+
+          fontStyles(textStyle)
+
+          endSelector()
+      else
+        startSelector(@name)
+        comment('Text dimensions')
+        if @options.showAbsolutePositions
+            declareAbsolutePosition(declaration, @bounds, unit)
+
+        if @bounds
+          declareSizeMixinOrDimensions(@options.enableLessHat, mixin, declaration, @bounds, unit)
 
         endSelector()
-        $.newline()
+
+      $.newline()
     else
       if @options.showComments
         comment("Style for \"#{utils.trim(@name)}\"")
