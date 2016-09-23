@@ -1,7 +1,7 @@
 {
   "name": "csshat-language-less",
   "title": "Less",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "Less language",
   "main": "main",
   "scope": "source.css.less",
